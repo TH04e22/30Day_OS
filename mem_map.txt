@@ -1,0 +1,19 @@
+/* 讀入FAT12格式軟碟 10 x 2 x 18 x 512 = 184,320 Bytes 資料
+# 0ff0h : BOOT_INFO( 啟動時的資訊 )
+  -- 0ff0h : CYLS( 設定開機磁區 )
+  -- 0ff1h : LEDS( 鍵盤LED狀態 )
+  -- 0ff2h : VMODE( 紀錄畫面模式 )
+  -- 0ff4h : SCRNX( X方向的解析度 screen x )
+  -- 0ff6h : SCRNY( Y方向的解析度 screen y )
+  -- 0ff8h : VRAM( 儲存圖形緩衝區儲存位址 )
+# 7c00h ~ 7dffh : 開機磁區(Boot Sector:ipl10.nas)被讀入位址
+# 8200h ~ 83ffh  : 開機磁區內容
+# 8400h ~ 34fffh : 從軟碟讀入的資料
+  -- AA00h : 檔案名稱
+  -- C200h : 檔案內容物( 系統起始點 )
+# 9FBFFh : 軟碟讀入的資料底部( total : 64 MB)
+# A0000h : 圖形緩衝區儲存位置
+# 26f800h : 中斷描述符表( total : 2 kB = 256 * 8 bytes )
+# 270000h : 全域區段描述符表( total : 64 kB = 8192 * 8 bytes )
+# 280000h : 作業系統所在地( total : 512 kB )
+ 

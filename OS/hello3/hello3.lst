@@ -1,0 +1,22 @@
+     1 00000000                                 [FORMAT "WCOFF"]
+     2 00000000                                 [INSTRSET "i486p"]
+     3 00000000                                 [BITS 32]
+     4 00000000                                 [FILE "hello5.nas"]
+     5 00000000                                 
+     6 00000000                                     GLOBAL _HariMain
+     7                                          [SECTION .text]
+     8 00000000                                 
+     9 00000000                                 _HariMain:
+    10 00000000 BA 00000002                             MOV     EDX, 2
+    11 00000005 BB [00000000]                           MOV     EBX, msg
+    12 0000000A CD 40                                   INT     0x40
+    13 0000000C BA 00000004                             MOV     EDX, 4
+    14 00000011 CD 40                                   INT     0x40
+    15 00000013                                 
+    16                                          [SECTION .data]
+    17 00000000                                 msg:
+    18 00000000 54 68 65 72 65 20 69 73 20 6E           DB      "There is nothing in this world constant but inconstancy.", 0x0a, 0       0000000A 6F 74 68 69 6E 67 20 69 6E 20 
+       00000014 74 68 69 73 20 77 6F 72 6C 64 
+       0000001E 20 63 6F 6E 73 74 61 6E 74 20 
+       00000028 62 75 74 20 69 6E 63 6F 6E 73 
+       00000032 74 61 6E 63 79 2E 0A 00 
